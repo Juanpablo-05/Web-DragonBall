@@ -8,7 +8,8 @@ export const ApiProvider = ({ children }) => {
   const [items, setItems] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
   const [totalPages, setTotalPages] = useState(1);
-  const [dataType, setDataType] = useState("characters")
+  const [dataType, setDataType] = useState("characters");
+  const [dataFilter, setDataFilter] = useState([] || '');
 
   //funcion para seleccionar el tipo de dato a mostrar
   const handleDataTypeChange =  (type) => {
@@ -31,7 +32,6 @@ export const ApiProvider = ({ children }) => {
   const handleLastPage = () => {
     setCurrentPage(totalPages);
   };
-
   //funcion para hacer fetch a la api
   const fetchData = async (url) => {
     try {
@@ -52,7 +52,7 @@ export const ApiProvider = ({ children }) => {
     : `https://dragonball-api.com/api/planets?page=${currentPage}&limit=4`
     
     fetchData(urlWithPage);
-    console.log(dataType)
+    setDataFilter([]); 
   }, [currentPage, dataType]);
 
   return (
@@ -63,6 +63,8 @@ export const ApiProvider = ({ children }) => {
         currentPage,
         totalPages,
         dataType,
+        dataFilter,
+        setDataFilter,
         setData,
         fetchData,
         setItems,
@@ -70,7 +72,7 @@ export const ApiProvider = ({ children }) => {
         handleLastPage,
         handleNextPage,
         handlePrevPage,
-        handleDataTypeChange
+        handleDataTypeChange,
       }}
     >
       {children}

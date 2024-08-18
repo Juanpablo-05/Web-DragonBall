@@ -1,5 +1,6 @@
-import React, { useContext } from "react";
+import { useContext } from "react";
 import { ApiContext } from "../context/apiContext";
+import Filter from "./Filter";
 
 function Paginate() {
   const { 
@@ -54,6 +55,8 @@ function Paginate() {
           <option value="Planets">Planets</option>
         </select>
       </div>
+
+      <Filter/>
     </div>
   );
 }

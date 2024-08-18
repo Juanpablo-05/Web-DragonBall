@@ -1,12 +1,20 @@
 import React from "react";
+import { useContext, useState } from "react";
 import { ApiContext } from "../context/apiContext";
-import { useContext } from "react";
 
 function Card() {
-  const { items } = useContext(ApiContext);
+  const { items, dataFilter } = useContext(ApiContext)
+  const [isVisible, setIsVisible] = useState(false)
+  //funcion para hacer visible las informacion
+  const handleVisible = ()=>{
+      setIsVisible(!isVisible)
+  }
+
+  const displayItems = dataFilter.length > 0 ? dataFilter : items;
+
   return (
     <>
-      {items.map((item, index) => (
+      {displayItems.map((item, index) => (
         <div key={index} className="card-container">
           <div className="img-con">
             <img src={item.image} alt="dragon ball img" />
@@ -37,6 +45,17 @@ function Card() {
               <span className="des-card">{item.affiliation}</span>
             </div>
 
+            <div className={isVisible ? 'des-info open' : 'des-info'} >
+              <h3>Descripcion</h3>
+              <div className="info">
+                {item.description}
+              </div>
+            </div>
+
+            <button className='btn-more'
+              onClick={handleVisible}>
+              info
+            </button>
           </div>
         </div>
       ))}
