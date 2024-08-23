@@ -4,12 +4,12 @@ export const ApiContext = createContext();
 
 export const ApiProvider = ({ children }) => {
   // Estados para la API
-  const [data, setData] = useState([]);
-  const [items, setItems] = useState([]);
-  const [currentPage, setCurrentPage] = useState(1);
-  const [totalPages, setTotalPages] = useState(1);
-  const [dataType, setDataType] = useState("characters");
-  const [dataFilter, setDataFilter] = useState([] || '');
+  const [data, setData] = useState([]); //datos para la navegacion
+  const [items, setItems] = useState([]);//datos de los personajes
+  const [currentPage, setCurrentPage] = useState(1);// cambiar de pagina
+  const [totalPages, setTotalPages] = useState(1);//paginas totales
+  const [dataType, setDataType] = useState("characters");//tipo de datos de la api
+  const [dataFilter, setDataFilter] = useState([] || '');//filtro de los datos
 
   //funcion para seleccionar el tipo de dato a mostrar
   const handleDataTypeChange =  (type) => {

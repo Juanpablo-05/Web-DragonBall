@@ -4,11 +4,12 @@ import { ApiContext } from "../context/apiContext";
 
 function Card() {
   const { items, dataFilter } = useContext(ApiContext)
-  const [isVisible, setIsVisible] = useState(false)
+  const [visibleIndex, setVisibleIndex] = useState(null)
   //funcion para hacer visible las informacion
-  const handleVisible = ()=>{
-      setIsVisible(!isVisible)
-  }
+  const handleVisible = (index) => {
+    setVisibleIndex(visibleIndex === index ? null : index); // Alternar visibilidad
+  };
+
 
   const displayItems = dataFilter.length > 0 ? dataFilter : items;
 
@@ -45,7 +46,7 @@ function Card() {
               <span className="des-card">{item.affiliation}</span>
             </div>
 
-            <div className={isVisible ? 'des-info open' : 'des-info'} >
+            <div className={visibleIndex === index ? 'des-info open' : 'des-info'} >
               <h3>Descripcion</h3>
               <div className="info">
                 {item.description}
@@ -53,7 +54,9 @@ function Card() {
             </div>
 
             <button className='btn-more'
-              onClick={handleVisible}>
+              onClick={()=>{
+                handleVisible(index)
+              }}>
               info
             </button>
           </div>

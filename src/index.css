@@ -1,16 +1,16 @@
-*{
+* {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   font-family: Roboto, Helvetica, Arial, sans-serif;
 }
 
-body{
+body {
   background: rgb(97, 97, 97);
 }
 
 /* Nav Component */
-.nav-container{
+.nav-container {
   padding: 1rem;
   width: 100%;
   height: 100vh;
@@ -19,44 +19,43 @@ body{
   align-items: center;
   flex-direction: column;
 
-  .logo-container{
+  .logo-container {
     width: 100%;
-    height: 70%;  
+    height: 70%;
     display: flex;
     justify-content: center;
     align-items: center;
 
-    .logo{
+    .logo {
       max-width: 780px;
       max-height: 780px;
       object-fit: contain;
       overflow-clip-margin: content-box;
       overflow: clip;
-      transition: .2s ease;
+      transition: 0.2s ease;
 
-      &:hover{
+      &:hover {
         scale: 1.1;
-        transition: .2s ease;
+        transition: 0.2s ease;
       }
     }
   }
 
-  .title{
+  .title {
     font-size: 2rem;
     color: rgb(255, 255, 255);
     font-weight: 700;
     letter-spacing: 0.1rem;
 
-    span{
-      color: rgb(251, 192, 45);;
+    span {
+      color: rgb(251, 192, 45);
       font-size: 4rem;
       font-weight: bold;
-
     }
   }
 }
 /* Nav Paginate Component */
-.nav-paginate{
+.nav-paginate {
   display: flex;
   justify-content: space-evenly;
   width: 100%;
@@ -65,16 +64,16 @@ body{
   gap: 1rem;
   align-items: center;
 
-  .opc-btn{
+  .opc-btn {
     background: rgb(251, 192, 45);
     padding: 0.5rem 1rem;
     border: none;
     font-weight: bold;
     border-radius: 0.5rem;
     cursor: pointer;
-    transition: all 0.3s ease; 
+    transition: all 0.3s ease;
 
-    &:hover{
+    &:hover {
       background: rgb(255, 255, 255);
       color: rgb(251, 192, 45);
       font-weight: bold;
@@ -82,7 +81,7 @@ body{
     }
   }
 
-  select{
+  select {
     width: 150px;
     padding: 0.5rem;
     border-radius: 0.5rem;
@@ -97,44 +96,44 @@ body{
       border-color: rgb(251, 192, 45);
     }
 
-    option{
-    color: rgb(251, 192, 45);
-    font-weight: bold;
+    option {
+      color: rgb(251, 192, 45);
+      font-weight: bold;
     }
   }
 
-  .filter-container{
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  .filter-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
 
-  input {
-    width: 200px;
-    padding: 0.5rem;
-    border-radius: 0.5rem;
-    border: 1px solid #ccc;
-    background-color: #fff;
-    font-size: 1rem;
-    color: #333;
-    transition: all 0.3s ease;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    input {
+      width: 200px;
+      padding: 0.5rem;
+      border-radius: 0.5rem;
+      border: 1px solid #ccc;
+      background-color: #fff;
+      font-size: 1rem;
+      color: #333;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 
-    &:focus {
-      border-color: rgb(251, 192, 45);
-      outline: none;
-      box-shadow: 0 4px 8px rgba(251, 192, 45, 0.5);
+      &:focus {
+        border-color: rgb(251, 192, 45);
+        outline: none;
+        box-shadow: 0 4px 8px rgba(251, 192, 45, 0.5);
+      }
+
+      &::placeholder {
+        color: #aaa;
+        font-style: italic;
+      }
     }
-
-    &::placeholder {
-      color: #aaa;
-      font-style: italic;
-    }
-  }
   }
 }
 
 /* Card Component */
-.section-card{
+.section-card {
   position: relative;
   width: 100%;
   height: fit-content;
@@ -142,24 +141,24 @@ body{
   flex-wrap: wrap;
   align-items: center;
   justify-content: center;
-  gap:40px 30px;
+  gap: 40px 30px;
   margin-top: 25px;
 }
 
-.card-container{
+.card-container {
   position: relative;
   width: 300px;
   height: 600px;
   display: flex;
   flex-direction: column;
   background-color: #1e1e1e;
-  border-radius: 1rem; 
+  border-radius: 1rem;
   box-shadow: 0 4px 8px rgba(255, 255, 255, 0.2);
 
   .img-con {
     width: 100%;
     height: 60%;
-    background: url('../public/bg-card.webp') ;
+    background: url("../public/bg-card.webp");
     background-size: contain;
     position: relative;
     border-radius: 1rem 1rem 0 0;
@@ -171,19 +170,21 @@ body{
       height: 100%;
       min-height: 400px;
       object-fit: contain;
-      transition: .2s ease;
+      transition: 0.2s ease;
 
-      &:hover{
+      &:hover {
         scale: 1.1;
-        transition: .3s ease;
+        transition: 0.3s ease;
         cursor: pointer;
       }
     }
-    
-    .img-planet{
+
+    .img-planet {
       border-radius: 1rem 1rem 0 0;
       object-fit: cover;
-      &:hover{border-radius: 1em;}
+      &:hover {
+        border-radius: 1em;
+      }
     }
   }
 
@@ -203,16 +204,16 @@ body{
       flex-direction: column;
       margin-bottom: 1rem;
 
-      .title-planet{
+      .title-planet {
         font-size: 2rem;
         position: absolute;
-        top:0
+        top: 0;
       }
 
       h2 {
         font-size: 2rem;
         position: absolute;
-        top:.9rem;
+        top: 0.9rem;
         margin: 0;
         color: rgb(235, 172, 0);
         font-weight: bold;
@@ -220,81 +221,82 @@ body{
 
       .des-card {
         font-size: 1rem;
-        color: rgb(251, 192, 45);;
+        color: rgb(251, 192, 45);
       }
     }
 
-    .grup-container{
+    .grup-container {
       display: flex;
       flex-direction: column;
       width: 100%;
       gap: 5px;
 
-      .des-card{
+      .des-card {
         font-size: 1.2rem;
         font-weight: bold;
-        color: rgb(251, 192, 45);;
+        color: rgb(251, 192, 45);
       }
 
-      .des-card-planet{
+      .des-card-planet {
         max-height: 100px;
         overflow-y: auto;
-        scrollbar-width: thin; 
+        scrollbar-width: thin;
       }
 
-      .title-card{
-        font-size: 1.2rem; 
+      .title-card {
+        font-size: 1.2rem;
         font-weight: bold;
       }
     }
 
-    .des-info{
+    .des-info {
       position: absolute;
       width: 100%;
       height: 0;
-      overflow: auto  ;
-      opacity: 0;
-      visibility: hidden;
+      overflow: auto;
       scrollbar-width: thin;
-      bottom: 0;
-      left: 0;
-      transition: all 0.5s ease;
       color: #1e1e1e;
       font-size: 1.1rem;
       padding: 1rem;
       border-radius: 1rem 1rem 0 0;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: space-between;
+      left:0;
+      bottom:0;
+      z-index: 0;
+      transition: all 0.5s ease, display .3s ease allow-discrete;
+      scale: 0;
 
-      &.open{
-        height: 70%; 
+      &.open {
+        height: 70%;
         background: rgb(235, 172, 0);
-        opacity: 1;
-        visibility: visible;
-        transition: .3s ease;
-        animation: slide-top 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+        transition: .3s ease, display .3s ease allow-discrete;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+        scale: 1;
+
+        @starting-style{
+          scale:0
+        }
       }
 
-      h3{
+      h3 {
         text-align: center;
         font-weight: bold;
         color: #fff;
         margin: 15px 0;
       }
 
-      .info{
+      .info {
         overflow: auto;
         height: 100%;
         width: 100%;
         scrollbar-width: thin;
         scroll-padding: 0;
-
       }
     }
 
-    .btn-more{
+    .btn-more {
       position: absolute;
       right: 1rem;
       bottom: 1rem;
@@ -305,9 +307,9 @@ body{
       padding: 0.5rem 1rem;
       font-size: 1rem;
       cursor: pointer;
-      transition: .2s ease ;
-      
-      &:hover{
+      transition: 0.2s ease;
+
+      &:hover {
         transition: all 0.3s ease;
         background-color: rgb(235, 172, 0);
         color: #fff;
@@ -319,23 +321,24 @@ body{
 
 /* RESPONSIVE DISEING */
 
-@-webkit-keyframes slide-top {
+@keyframes slide-botton {
   0% {
-    -webkit-transform: translateY(0);
-            transform: translateY(0);
+    transform: translateX(10px);
+    transform: translateY(0);
   }
   100% {
-    -webkit-transform: translateY(-100px);
-            transform: translateY(-100px);
+    transform: translateY(100px);
+    transform: translateY(100px);
   }
 }
+
 @keyframes slide-top {
   0% {
-    -webkit-transform: translateY(0);
-            transform: translateY(0);
+    transform: translateX(10px);
+    transform: translateY(0);
   }
   100% {
-    -webkit-transform: translateY(-100px);
-            transform: translateY(-100px);
+    transform: translateY(-100px);
+    transform: translateY(-100px);
   }
 }

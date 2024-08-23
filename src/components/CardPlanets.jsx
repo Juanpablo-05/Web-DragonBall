@@ -1,10 +1,13 @@
 import {useContext} from 'react'
 import { ApiContext } from '../context/apiContext';
 function CardPlanets() {
-  const { items } = useContext(ApiContext);
+  const { items, dataFilter } = useContext(ApiContext);
+
+  const displayItems = dataFilter.length > 0 ? dataFilter : items;
+
   return (
     <>
-      {items.map((item, index) => (
+      {displayItems.map((item, index) => (
         <div key={index} className="card-container">
           <div className="img-con">
             <img src={item.image} alt="dragon ball img" className='img-planet'/>
